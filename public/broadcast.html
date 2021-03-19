@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Broadcaster</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <section class="select">
+      <label for="audioSource">Audio source: </label>
+      <select id="audioSource"></select>
+    </section>
+
+    <section class="select">
+      <label for="videoSource">Video source: </label>
+      <select id="videoSource"></select>
+    </section>
+
+    <video playsinline autoplay muted></video>
+    <h2>Room ID:</h2>
+    <h4 id="room ID">ID</h4>
+    <canvas id="canvas"> </canvas>
+    <script src="https://3.128.226.104:4000/socket.io/socket.io.js"></script>
+    <script>
+      var roomID = "<%= roomID %>";
+    </script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="/broadcast.js"></script>
+  </body>
+</html>
