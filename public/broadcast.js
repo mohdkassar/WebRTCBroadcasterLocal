@@ -218,6 +218,8 @@ function gotStream(stream) {
     (option) => option.text === stream.getVideoTracks()[0].label
   );
   videoElement.srcObject = stream;
+  videoElement.muted = true;
+  videoElement.autoplay = false;
   socket.emit("broadcaster", roomID);
 }
 
@@ -230,7 +232,7 @@ function takepicture() {
 
     canvas.width = width;
     canvas.height = height;
-    context.drawImage(videoElement, 0, 0, width, height);
+    //context.drawImage(videoElement, 0, 0, width, height);
 
     var data = canvas.toDataURL("image/png");
     photo.setAttribute("src", data);
